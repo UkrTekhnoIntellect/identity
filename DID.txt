@@ -1,0 +1,56 @@
+### Decentralized Identity Document (DID) for Autonomous Agent ###
+
+# Context and Identification
+did:example:agent-llm-node-unique-id-1234
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://identity.foundation/.well-known/did-configuration/v1"
+  ],
+  "id": "did:example:agent-llm-node-unique-id-1234",
+  
+  # Verification Methods
+  "verificationMethod": [{
+    "id": "#keys-1",
+    "type": "Ed25519VerificationKey2020",
+    "controller": "did:example:agent-llm-node-unique-id-1234",
+    "publicKeyMultibase": "z6MkqRYqQiSgvZQdnBytw86Qbs2ZWUkGv22od935YF4s8M7V"
+  }],
+
+  # Authentication
+  "authentication": [
+    "#keys-1"
+  ],
+
+  # Service Endpoints
+  "service": [
+    {
+      "id": "#web-endpoint",
+      "type": "AgentWebInterface",
+      "serviceEndpoint": "https://{agent-llm-node-unique-id-1234}/web"
+    },
+    {
+      "id": "#api-endpoint",
+      "type": "AgentAPI",
+      "serviceEndpoint": "https://{agent-llm-node-unique-id-1234}/api"
+    },
+    {
+      "id": "#mcp-endpoint",
+      "type": "AgentToAgentComms",
+      "serviceEndpoint": "https://{agent-llm-node-unique-id-1234}/mcp"
+    }
+  ],
+
+  # Timestamps
+  "created": "2023-07-15T00:00:00Z",
+  "updated": "2023-07-15T00:00:00Z",
+
+  # Proof of Control
+  "proof": {
+    "type": "JwtSecp256k1Signature2020",
+    "created": "2023-07-15T00:00:00Z",
+    "proofPurpose": "authentication",
+    "verificationMethod": "#keys-1",
+    "jws": "eyJhbGciOiJFUzI1NksiLCJiNjQiOnRydWUsImNyaXQiOiJiNjQifQ..EJtAvj9... (truncated)"
+  }
+}
