@@ -1,0 +1,5 @@
+"agentMetadata": {
+  "llmVersion": "2.3.1",
+  "capabilities": ["natural-language-processing", "multi-agent-negotiation"],
+  "serviceLevel": "enterprise"
+}
